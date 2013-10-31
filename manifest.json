@@ -6,7 +6,7 @@
   "version": "0.0",
 
   "permissions": [
-    "http://www.flickr.com/"
+    "http://*.amazon.com", "https://*.amazon.com",
   ],
   "browser_action": {
     "default_icon": "icon.png",
