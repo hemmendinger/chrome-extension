@@ -1,9 +1,13 @@
 function nextPage() {
-    var AMAZON_DOMAIN = "www.amazon.com";
 
-    var nextPage = function () {
-	document.getElementBy
+
+    var nextPage = '';
+
+    function getNextPageHref() {
+        return document.getElementById('pagnNextLink').href;
     };
+
+    
 
 };
 
