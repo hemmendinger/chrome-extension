@@ -7,17 +7,11 @@
 
 "permissions": [
     "activeTab",
-    "http://www.amazon.com/"
+    "http://*/*"
 ],
 "browser_action": {
-    "default_icon": "icon.png"
-},
-"content_scripts": [
-    {
-        "matches": ["http://www.amazon.com/*"],
-        "js": ["next.js"],
-        "run_at": "document_end"
-    }
-]
+    "default_icon": "icon.png",
+    "default_title": "browser action title"
+}
 
 }
