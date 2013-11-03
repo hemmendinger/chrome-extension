@@ -12,5 +12,5 @@ chrome.runtime.onMessage.addListener(
             "from a content script:" + sender.tab.url :
             "from the extension");
         if (request.backgroundClick == true)
-            sendResponse({farewell: "goodbye"});
+            sendResponse({result: "content.js processed backgroundClick == true"});
     });
