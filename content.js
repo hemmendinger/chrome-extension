@@ -12,6 +12,8 @@ chrome.runtime.onMessage.addListener(
             "from a content script:" + sender.tab.url :
             "from the extension");
         if (request.backgroundClick == true) {
+            document.body.style.marginLeft = "25%";
+            document.body.style.marginRight = "25%";
             sendResponse({result: "content.js processed backgroundClick == true"});
         }
     });
