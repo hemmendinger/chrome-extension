@@ -11,6 +11,6 @@ chrome.runtime.onMessage.addListener(
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
-        if (request.greeting == "hello")
+        if (request.backgroundClick == true)
             sendResponse({farewell: "goodbye"});
     });
