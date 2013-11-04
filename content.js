@@ -14,6 +14,14 @@ chrome.runtime.onMessage.addListener(
         if (request.backgroundClick == true) {
             document.body.style.marginLeft = "25%";
             document.body.style.marginRight = "25%";
+
+            if (document.domain == "news.ycombinator.com") {
+
+                for (var i = 0; i <= document.getElementsByClassName("title").length; i++) {
+                    document.getElementsByClassName("title")[i].style.fontSize = "24px";
+                }
+            }
+
             sendResponse({result: "content.js processed backgroundClick == true"});
         }
     });
