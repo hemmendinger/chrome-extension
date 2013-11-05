@@ -1,31 +1,31 @@
 {
-"manifest_version": 2,
+    "manifest_version": 2,
 
-"name": "Learning to make extensions",
-"description": "Learning to make extensions.",
-"version": "0.0",
+    "name": "Learning to make extensions",
+    "description": "Learning to make extensions.",
+    "version": "0.0",
 
-"permissions": [
-    "activeTab",
-    "contextMenus",
-    "http://*/*"
-],
-"browser_action": {
-    "default_icon": "icon.png",
-    "default_title": "browser action title"
-},
-"background": {
-    "scripts": ["background.js"]
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "http://*/*"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "browser action title"
+    },
+    "background": {
+        "scripts": ["background.js"]
 
-},
-"content_scripts": [
-    {
-        "matches": ["<all_urls>"],
-        "css": ["content.css"],
-        "js": ["content.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["content.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "icons": {
+        "16": "icon.png"
     }
-],
-"icons": {
-    "16": "icon.png"
-}
 }
