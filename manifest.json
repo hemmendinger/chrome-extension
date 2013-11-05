@@ -7,6 +7,7 @@
 
 "permissions": [
     "activeTab",
+    "contextMenus",
     "http://*/*"
 ],
 "browser_action": {
@@ -23,6 +24,8 @@
         "css": ["content.css"],
         "js": ["content.js"]
     }
-]
-
+],
+"icons": {
+    "16": "icon.png"
+},
 }
