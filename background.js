@@ -15,7 +15,7 @@ function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoole
             console.log(response.result);
         });
     });
-}
+};
 
 chrome.browserAction.onClicked.addListener(function (){
     console.log("browser action clicked");
@@ -28,3 +28,13 @@ chrome.browserAction.onClicked.addListener(function (){
 });
 
 
+// context menu
+chrome.contextMenus.onClicked.addListener(onClickedMenuItemHandler);
+
+chrome.contextMenus.create({
+    "title": "Set left and right margins to 25%",
+    "type": "normal",
+    "id": "margin25pct",
+    "contexts": ["page"],
+    "enabled": true
+});

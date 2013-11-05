@@ -25,3 +25,10 @@ chrome.runtime.onMessage.addListener(
             sendResponse({result: "content.js processed backgroundClick == true"});
         }
     });
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.clicked == "margin25pct") {
+        document.body.style.marginLeft = "25%";
+        document.body.style.marginRight = "25%";
+    };
+});
