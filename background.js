@@ -3,9 +3,9 @@ console.log("background.js loaded");
 
 function onClickedMenuItemHandler(info, tab) {
     if (info.menuItemId == "margin25pct") {
-        var active = true;
-        var currentWindow = true;
-        sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoolean);
+        var activeBoolean = true;
+        var currentWindowBoolean = true;
+        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
     };
 };
 
