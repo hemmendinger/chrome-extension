@@ -1,5 +1,7 @@
 console.log("content js loaded");
 
+
+// utility functions
 function setMarginPct(numberLeft, numberRight) {
     document.body.style.marginLeft = numberLeft + "%";
     document.body.style.marginRight = numberRight + "%";
@@ -20,12 +22,15 @@ function hackerNewsHandler() {
 document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 
 
-function nextPage() {
+function amazonHandler() {
+    document.removeEventListener("DOMContentLoaded", amazonHandler(), false);
+    
     window.location.href = document.getElementById('pagnNextLink').href;
-};
+}
 
+document.addEventListener("DOMContentLoaded", amazonHandler, false);
 
-// adds 25% margins
+// clicking icon behavior: adds 25% margins
 // based on example
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
