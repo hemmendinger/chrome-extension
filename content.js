@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 
 
 function amazonHandler() {
-    document.removeEventListener("DOMContentLoaded", amazonHandler(), false);
+    document.removeEventListener("DOMContentLoaded", amazonHandler, false);
     if (document.domain == "www.amazon.com") {
 
         window.addEventListener("keydown", function(event){
