@@ -9,6 +9,7 @@ function onClickedMenuItemHandler(info, tab) {
     };
 };
 
+
 function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoolean) {
     chrome.tabs.query({active: activeBoolean, currentWindow: currentWindowBoolean}, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, {clicked: menuItemId}, function(response) {
@@ -16,6 +17,7 @@ function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoole
         });
     });
 };
+
 
 chrome.browserAction.onClicked.addListener(function (){
     console.log("browser action clicked");
@@ -28,7 +30,7 @@ chrome.browserAction.onClicked.addListener(function (){
 });
 
 
-// context menu
+// contextMenus
 chrome.contextMenus.onClicked.addListener(onClickedMenuItemHandler);
 
 chrome.contextMenus.create({

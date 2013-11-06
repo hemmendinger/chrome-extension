@@ -1,10 +1,9 @@
 console.log("content js loaded");
 
 function nextPage() {
-
     window.location.href = document.getElementById('pagnNextLink').href;
-
 };
+
 
 // adds 25% margins, increases font-sizes on class=title on news.ycombinator.com
 // based on example
@@ -27,6 +26,7 @@ chrome.runtime.onMessage.addListener(
             sendResponse({result: "content.js processed backgroundClick == true"});
         }
     });
+
 
 // create 25% left and right margins --- initiated via contextMenu
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
