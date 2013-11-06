@@ -8,6 +8,7 @@ function setMarginPct(numberLeft, numberRight) {
 function hackerNews() {
     document.removeEventListener("DOMContentLoaded", hackerNews, false);
     if (document.domain == "news.ycombinator.com") {
+        setMarginPct(25, 25);
         for (var i = 0; i <= document.getElementsByClassName("title").length; i++) {
             document.getElementsByClassName("title")[i].style.fontSize = "24px";
         }
@@ -22,7 +23,7 @@ function nextPage() {
 };
 
 
-// adds 25% margins, increases font-sizes on class=title on news.ycombinator.com
+// adds 25% margins
 // based on example
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
