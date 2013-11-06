@@ -1,5 +1,18 @@
 console.log("content js loaded");
 
+
+function hackerNews() {
+    document.removeEventListener("DOMContentLoaded", hackerNews, false);
+    if (document.domain == "news.ycombinator.com") {
+        for (var i = 0; i <= document.getElementsByClassName("title").length; i++) {
+            document.getElementsByClassName("title")[i].style.fontSize = "24px";
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", hackerNews, false);
+
+
 function nextPage() {
     window.location.href = document.getElementById('pagnNextLink').href;
 };
