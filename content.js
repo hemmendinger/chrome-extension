@@ -24,11 +24,18 @@ document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 
 function amazonHandler() {
     document.removeEventListener("DOMContentLoaded", amazonHandler(), false);
-    
-    window.location.href = document.getElementById('pagnNextLink').href;
+    if (document.domain == "www.amazon.com") {
+
+        window.addEventListener("keydown", function(event){
+            if (event.ctrlKey && (event.which == 39)) {
+                window.location.href = document.getElementById('pagnNextLink').href;
+            }
+        }, false);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", amazonHandler, false);
+
 
 // clicking icon behavior: adds 25% margins
 // based on example
