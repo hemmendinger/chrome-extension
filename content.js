@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", amazonHandler, false);
 
 // clicking icon behavior: adds 25% margins
 // based on example
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
@@ -48,12 +47,12 @@ chrome.runtime.onMessage.addListener(
             setMarginPct(25, 25);
             sendResponse({result: "content.js processed backgroundClick == true"});
         }
-    });
+});
 
 
 // create 25% left and right margins --- initiated via contextMenu
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.clicked == "margin25pct") {
         setMarginPct(25, 25);
-    };
+    }
 });
