@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 function amazonHandler() {
     document.removeEventListener("DOMContentLoaded", amazonHandler, false);
     if (document.domain == "www.amazon.com") {
-
         window.addEventListener("keydown", function(event){
+            // key combo: CTRL + right arrow
             if (event.ctrlKey && (event.which == 39)) {
                 window.location.href = document.getElementById('pagnNextLink').href;
             }
