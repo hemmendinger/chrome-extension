@@ -54,7 +54,6 @@ chrome.runtime.onMessage.addListener(
 // create 25% left and right margins --- initiated via contextMenu
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.clicked == "margin25pct") {
-        document.body.style.marginLeft = "25%";
-        document.body.style.marginRight = "25%";
+        setMarginPct(25, 25);
     };
 });
