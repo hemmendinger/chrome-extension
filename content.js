@@ -5,8 +5,10 @@ function setMarginPct(numberLeft, numberRight) {
     document.body.style.marginRight = numberRight + "%";
 }
 
-function hackerNews() {
-    document.removeEventListener("DOMContentLoaded", hackerNews, false);
+
+// domain specific handlers
+function hackerNewsHandler() {
+    document.removeEventListener("DOMContentLoaded", hackerNewsHandler, false);
     if (document.domain == "news.ycombinator.com") {
         setMarginPct(25, 25);
         for (var i = 0; i <= document.getElementsByClassName("title").length; i++) {
@@ -15,7 +17,7 @@ function hackerNews() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", hackerNews, false);
+document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 
 
 function nextPage() {
