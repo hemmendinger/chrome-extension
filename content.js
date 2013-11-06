@@ -6,6 +6,8 @@ function nextPage() {
 
 };
 
+// adds 25% margins, increases font-sizes on class=title on news.ycombinator.com
+// based on example
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         console.log(sender.tab ?
@@ -26,6 +28,7 @@ chrome.runtime.onMessage.addListener(
         }
     });
 
+// create 25% left and right margins --- initiated via contextMenu
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.clicked == "margin25pct") {
         document.body.style.marginLeft = "25%";
