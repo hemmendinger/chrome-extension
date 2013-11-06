@@ -37,8 +37,7 @@ function amazonHandler() {
 document.addEventListener("DOMContentLoaded", amazonHandler, false);
 
 
-// clicking icon behavior: adds 25% margins
-// based on example
+// icon click behavior: adds 25% margins (based on example)
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
