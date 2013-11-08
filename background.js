@@ -20,7 +20,7 @@ function onClickedMenuItemHandler(info, tab) {
     else if (info.menuItemId == "copy") {
         var activeBoolean = true;
         var currentWindowBoolean = true;
-        sendMessageToContent(info, tab, activeBoolean, currentWindowBoolean);
+        checkableContextMenuMessage(info, tab, activeBoolean, currentWindowBoolean);
     }
 }
 
