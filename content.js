@@ -54,10 +54,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.clicked == "margin25pct") {
         setMarginPct(25, 25);
     }
-});
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    if (request.clicked == "zoom150pct") {
+    else if (request.clicked == "zoom150pct") {
         document.body.style.zoom = "150%";
     }
 });
