@@ -20,7 +20,7 @@ function onClickedMenuItemHandler(info, tab) {
     else if (info.menuItemId == "copy") {
         var activeBoolean = true;
         var currentWindowBoolean = true;
-        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
+        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean, info.wasChecked);
     }
 }
 
