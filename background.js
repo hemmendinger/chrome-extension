@@ -20,7 +20,7 @@ function onClickedMenuItemHandler(info, tab) {
     else if (info.menuItemId == "copy") {
         var activeBoolean = true;
         var currentWindowBoolean = true;
-        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean, info.wasChecked);
+        sendMessageToContent(info, tab, activeBoolean, currentWindowBoolean);
     }
 }
 
@@ -33,6 +33,14 @@ function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoole
     });
 }
 
+// for checkable contextmenuitems
+function checkableContextMenuMessage(info, tab, activeBoolean, currentWindowBoolean) {
+    chrome.tabs.query({active: activeBoolean, currentWindow: currentWindowBoolean}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {clicked: info.menuItemId, wasChecked: info.wasChecked}, function(response) {
+            console.log(response.result);
+        });
+    });
+}
 
 chrome.browserAction.onClicked.addListener(function (){
     console.log("browser action clicked");

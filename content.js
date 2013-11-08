@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", hackerNewsHandler, false);
 function amazonHandler() {
     document.removeEventListener("DOMContentLoaded", amazonHandler, false);
     if (document.domain == "www.amazon.com") {
-        window.addEventListener("keydown", function(event){
+        window.addEventListener("keydown", function(event) {
             // key combo: CTRL + right arrow
             if (event.ctrlKey && (event.which == 39)) {
                 window.location.href = document.getElementById('pagnNextLink').href;
@@ -49,8 +49,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 // select text, copy text protection
-function copyHandler() {
 
+
+function copyHandler() {
+    // key combo: CTRL + c
+    if (event.ctrlKey && (event.which == 86)) {
+        var selection = window.getSelection();
+        copy(selection);
+    }
 }
 
 
@@ -81,9 +87,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     else if (request.clicked == "copy") {
         if (request.wasChecked == false) {
             // add listener handler
+            window.addEventListener("keydown", copyHandler, false);
+            console.log('adding event listener copy');
         }
         else {
             // remove listener
+            window.addRemoveListener("keydown", copyHandler, false);
+            console.log('removing event listener copy');
         }
     }
 });
