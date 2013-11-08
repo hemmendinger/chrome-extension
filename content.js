@@ -92,7 +92,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
         else {
             // remove listener
-            window.addRemoveListener("keydown", copyHandler, false);
+            window.removeEventListener("keydown", copyHandler, false);
             console.log('removing event listener copy');
         }
     }
