@@ -12,6 +12,11 @@ function onClickedMenuItemHandler(info, tab) {
         var currentWindowBoolean = true;
         sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
     }
+    else if (info.menuItemId == "flatten") {
+        var activeBoolean = true;
+        var currentWindowBoolean = true;
+        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
+    }
 };
 
 
@@ -50,6 +55,14 @@ chrome.contextMenus.create({
     "title": "Zoom: 150%",
     "type": "normal",
     "id": "zoom150pct",
+    "contexts": ["page"],
+    "enabled": true
+});
+
+chrome.contextMenus.create({
+    "title": "Flatten page",
+    "type": "normal",
+    "id": "flatten",
     "contexts": ["page"],
     "enabled": true
 });

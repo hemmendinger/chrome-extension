@@ -57,4 +57,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     else if (request.clicked == "zoom150pct") {
         document.body.style.zoom = "150%";
     }
+    else if (request.clicked == "flatten") {
+        var d = document.createElement('div');
+        d.innerHTML = '\
+            <style>\
+                *:not(.icon):not(i), *:not(.icon):not(i):after, *:not(.icon):not(i):before {\
+                    box-shadow: none !important;\
+                    text-shadow: none !important;\
+                    background-image: none !important;\
+                }\
+                *:not(.icon):not(i) {\
+                    border-color: transparent !important;\
+                }\
+            </style>\
+            ';
+        document.body.appendChild(d);
+    }
 });
