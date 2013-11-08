@@ -48,6 +48,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
 });
 
+// select text, copy text protection
+function copyHandler() {
+
+}
+
 
 // initiated via contextMenu: margin 25%, zoom 150%
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -72,5 +77,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             </style>\
             ';
         document.body.appendChild(d);
+    }
+    else if (request.clicked == "copy") {
+        if (request.wasChecked == false) {
+            // add listener handler
+        }
+        else {
+            // remove listener
+        }
     }
 });
