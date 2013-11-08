@@ -17,7 +17,12 @@ function onClickedMenuItemHandler(info, tab) {
         var currentWindowBoolean = true;
         sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
     }
-};
+    else if (info.menuItemId == "copy") {
+        var activeBoolean = true;
+        var currentWindowBoolean = true;
+        sendMessageToContent(info.menuItemId, tab, activeBoolean, currentWindowBoolean);
+    }
+}
 
 
 function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoolean) {
@@ -26,7 +31,7 @@ function sendMessageToContent(menuItemId, tab, activeBoolean, currentWindowBoole
             console.log(response.result);
         });
     });
-};
+}
 
 
 chrome.browserAction.onClicked.addListener(function (){
@@ -65,4 +70,13 @@ chrome.contextMenus.create({
     "id": "flatten",
     "contexts": ["page"],
     "enabled": true
+});
+
+chrome.contextMenus.create({
+    "title": "Cleanly copy text",
+    "type": "checkbox",
+    "id": "copy",
+    "contexts": ["page"],
+    "enabled": true,
+    "checked": false
 });
