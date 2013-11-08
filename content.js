@@ -49,7 +49,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 
-// create 25% left and right margins --- initiated via contextMenu
+// initiated via contextMenu: margin 25%, zoom 150%
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.clicked == "margin25pct") {
         setMarginPct(25, 25);
