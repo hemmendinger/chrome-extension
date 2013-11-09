@@ -8,6 +8,8 @@
     "permissions": [
         "activeTab",
         "contextMenus",
+        "clipboardWrite",
+        "clipboardRead",
         "http://*/*"
     ],
     "browser_action": {
