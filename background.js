@@ -88,3 +88,19 @@ chrome.contextMenus.create({
     "enabled": true,
     "checked": false
 });
+
+// handling messages from content.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+   if (request.selectedText) {
+       selectionObj = request.selectedText;
+       var selection = selectionObj.toString();
+
+       holderElement = document.createElement('div');
+       holderElement.className = 'text_holder';
+       var txt = selection;
+       holderElement.appendChild(txt);
+
+
+       document.execCommand('copy');
+   }
+});

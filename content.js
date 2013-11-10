@@ -55,12 +55,12 @@ function copyHandler() {
     // key combo: CTRL + c
     if (event.ctrlKey && (event.which == 67)) {
         var selectionObj = document.getSelection();
-        var selection = selectionObj.toString();
+        //var selection = selectionObj.toString();
         //copy(selection);
         chrome.runtime.sendMessage({
-            selectedText: selection
+            selectedText: selectionObj
         }, function(response) {
-            
+
         });
     }
 }
