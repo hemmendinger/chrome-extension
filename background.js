@@ -95,12 +95,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
        selectionObj = request.selectedText;
        var selection = selectionObj.toString();
 
-       holderElement = document.createElement('div');
-       holderElement.className = 'text_holder';
-       var txt = selection;
-       holderElement.appendChild(txt);
-
-
+       holderElement = document.getElementById('txt_div');
+       holderElement.innerText = selection;
+       document.execCommand('selectAll');
        document.execCommand('copy');
    }
 });
