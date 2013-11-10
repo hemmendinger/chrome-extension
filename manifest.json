@@ -9,6 +9,8 @@
         "activeTab",
         "clipboardWrite",
         "contextMenus",
+        "clipboardWrite",
+        "clipboardRead",
         "http://*/*"
     ],
     "browser_action": {
