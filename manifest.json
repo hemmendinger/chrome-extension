@@ -17,7 +17,8 @@
         "default_title": "browser action title"
     },
     "background": {
-        "scripts": ["background.js"]
+        //"scripts": ["background.js"]
+        "page": "background.html"
 
     },
     "content_scripts": [
