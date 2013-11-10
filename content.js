@@ -54,7 +54,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 function copyHandler() {
     // key combo: CTRL + c
     if (event.ctrlKey && (event.which == 67)) {
-        var selectionObj = window.getSelection();
+        var selectionObj = document.getSelection();
         var selection = selectionObj.toString();
         copy(selection);
 
