@@ -52,10 +52,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 
 function copyHandler() {
-    // key combo: CTRL + c
+    // key combo: CTRL + b
     if (event.ctrlKey && (event.which == 66)) {
         var selectionObj = document.getSelection();
-        var selection = selectionObj.toString();
+        var selection = selectionObj.toString()
         chrome.runtime.sendMessage({
             selectedText: selection
         }, function(response) {
