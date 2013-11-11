@@ -52,8 +52,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 
 function copyHandler() {
-    // key combo: CTRL + b
-    if (event.ctrlKey && (event.which == 66)) {
+    // key combo: CTRL + b(event.which ==66)
+    // key combo: CTRL + c(event.which ==
+    if (true) {
+        console.log('copying');
         var selectionObj = document.getSelection();
         var selection = selectionObj.toString()
         chrome.runtime.sendMessage({
@@ -92,12 +94,12 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     else if (request.clicked == "copy") {
         if (request.wasChecked == false) {
             // add listener handler
-            window.addEventListener("keydown", copyHandler, false);
+            window.addEventListener("copy", copyHandler, false);
             console.log('adding event listener copy');
         }
         else {
             // remove listener
-            window.removeEventListener("keydown", copyHandler, false);
+            window.removeEventListener("copy", copyHandler, false);
             console.log('removing event listener copy');
         }
     }
