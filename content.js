@@ -52,8 +52,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 
 function copyHandler() {
-    // key combo: CTRL + b(event.which ==66)
-    // key combo: CTRL + c(event.which ==
     if (true) {
         console.log('copying');
         var selectionObj = document.getSelection();
