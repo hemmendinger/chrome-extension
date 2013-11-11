@@ -91,10 +91,8 @@ chrome.contextMenus.create({
 
 // handling messages from content.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-   if (request.selectedText) {
-       selectionObj = request.selectedText;
-       var selection = selectionObj.toString();
-
+   if (request.selection) {
+       var selection = request.selection;
        holderElement = document.getElementById('txt_div');
        holderElement.innerText = selection;
        document.execCommand('selectAll');
