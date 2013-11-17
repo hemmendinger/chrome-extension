@@ -1,6 +1,3 @@
-console.log("content js loaded");
-
-
 // utility functions
 function setMarginPct(numberLeft, numberRight) {
     document.body.style.marginLeft = numberLeft + "%";
