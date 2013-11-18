@@ -35,25 +35,33 @@ document.addEventListener("DOMContentLoaded", amazonHandler, false);
 
 
 function eveDataCentral() {
+    document.removeEventListener("DOMContentLoaded", eveDataCentral, false);
+
+
     // uses jQuery
-    function getISK(cell, sellOrBuyInt) {
-        var cellStr = $(cell).text();
-        cellStr = cellStr.substring(sellOrBuyInt);
-        var stop = cellStr.indexOf(' ');
-        cellStr = cellStr.substring(0, stop);
-        cellStr = cellStr.replace(/,/g, "");
-        return parseFloat(cellStr);
-    }
 
-    var selling = $("tr td:has(b):contains('Selling')");
-    var buying =  $("tr td:has(b):contains('Buying')");
-    var sellInt = 9;
-    var buyInt = 8;
 
-    for (var i = 0; i < selling.length; i++) {
-        buyPrice = getISK(selling[i], sellInt);
-        sellPrice = getISK(buying[i], buyInt);
-        
+    if (document.domain == "eve-central.com") {
+        console.log('domain');
+        function getISK(cell, sellOrBuyInt) {
+            var cellStr = $(cell).text();
+            cellStr = cellStr.substring(sellOrBuyInt);
+            var stop = cellStr.indexOf(' ');
+            cellStr = cellStr.substring(0, stop);
+            cellStr = cellStr.replace(/,/g, "");
+            return parseFloat(cellStr);
+        }
+
+        var selling = $("tr td:has(b):contains('Selling')");
+        var buying =  $("tr td:has(b):contains('Buying')");
+        var sellInt = 9;
+        var buyInt = 8;
+
+        for (var i = 0; i < selling.length; i++) {
+            var buyPrice = getISK(selling[i], sellInt);
+            var sellPrice = getISK(buying[i], buyInt);
+            console.log(sellPrice);
+        }
     }
 }
 
