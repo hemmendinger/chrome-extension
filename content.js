@@ -37,12 +37,8 @@ document.addEventListener("DOMContentLoaded", amazonHandler, false);
 function eveDataCentral() {
     document.removeEventListener("DOMContentLoaded", eveDataCentral, false);
 
-
     // uses jQuery
-
-
     if (document.domain == "eve-central.com") {
-        console.log('domain');
         function getISK(cell, sellOrBuyInt) {
             var cellStr = $(cell).text();
             cellStr = cellStr.substring(sellOrBuyInt);
@@ -58,9 +54,13 @@ function eveDataCentral() {
         var buyInt = 8;
 
         for (var i = 0; i < selling.length; i++) {
+
             var buyPrice = getISK(selling[i], sellInt);
             var sellPrice = getISK(buying[i], buyInt);
-            console.log(sellPrice);
+            var num = i * 5;
+            console.log(num);
+            $("table tr")[num].append("<td>appended</td>");
+
         }
     }
 }
