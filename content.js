@@ -34,6 +34,29 @@ function amazonHandler() {
 document.addEventListener("DOMContentLoaded", amazonHandler, false);
 
 
+function eveDataCentral() {
+    // uses jQuery
+    function getISK(cell, sellOrBuyInt) {
+        var cellStr = $(cell).text();
+        cellStr = cellStr.substring(sellOrBuyInt);
+        var stop = cellStr.indexOf(' ');
+        cellStr = cellStr.substring(0, stop);
+        cellStr = cellStr.replace(/,/g, "");
+        return parseFloat(cellStr);
+    }
+
+    var selling = $("tr td:has(b):contains('Selling')");
+    var buying =  $("tr td:has(b):contains('Buying')");
+    var sellInt = 9;
+    var buyInt = 8;
+
+    for (var i = 0; i < selling.length; i++) {
+        
+    }
+}
+
+document.addEventListener("DOMContentLoaded", eveDataCentral, false);
+
 // icon click behavior: adds 25% margins (based on example)
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log(sender.tab ?
