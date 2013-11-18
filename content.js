@@ -51,6 +51,8 @@ function eveDataCentral() {
     var buyInt = 8;
 
     for (var i = 0; i < selling.length; i++) {
+        buyPrice = getISK(selling[i], sellInt);
+        sellPrice = getISK(buying[i], buyInt);
         
     }
 }
