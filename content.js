@@ -39,8 +39,9 @@ function eveDataCentral() {
 
     // uses jQuery
     if (document.domain == "eve-central.com") {
-        function getISK(cell, sellOrBuyInt) {
-            var cellStr = $(cell).text();
+        function getISK(node, sellOrBuyInt) {
+            //var cellStr = $(cell).text();
+            var cellStr = node.innerText();
             cellStr = cellStr.substring(sellOrBuyInt);
             var stop = cellStr.indexOf(' ');
             cellStr = cellStr.substring(0, stop);
@@ -48,18 +49,23 @@ function eveDataCentral() {
             return parseFloat(cellStr);
         }
 
-        var selling = $("tr td:has(b):contains('Selling')");
-        var buying =  $("tr td:has(b):contains('Buying')");
+        //var selling = $("tr td:has(b):contains('Selling')");
+        //var buying =  $("tr td:has(b):contains('Buying')");
         var sellInt = 9;
         var buyInt = 8;
+        var nodes = document.getElementsByTagName('tr');
 
-        for (var i = 0; i < selling.length; i++) {
 
-            var buyPrice = getISK(selling[i], sellInt);
-            var sellPrice = getISK(buying[i], buyInt);
-            var num = i * 5;
+        for (var i = 0; i < 50; i+=5) {
+            var node = nodes[i+1];
+            console.log(node);
+            var selling = node.getElementsByTagName('td').contains('Selling');
+            var buying = node.getElementsByTagName('td').contains('Buying');
+            var buyPrice = getISK(selling, sellInt);
+            var sellPrice = getISK(buying, buyInt);
+
             console.log(num);
-            $("table tr")[num].append("<td>appended</td>");
+
 
         }
     }
