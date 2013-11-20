@@ -59,11 +59,12 @@ function eveDataCentral() {
         for (var i = 0; i < 50; i+=5) {
             var node = nodes[i+1];
             console.log(node);
-            var selling = node.getElementsByTagName('td').contains('Selling');
-            var buying = node.getElementsByTagName('td').contains('Buying');
+            var selling = node.getElementsByTagName('td');
+            var buying = node.getElementsByTagName('td');
+            selling = selling.contains('Selling');
+            buying = buying.contains('Buying');
             var buyPrice = getISK(selling, sellInt);
             var sellPrice = getISK(buying, buyInt);
-
             console.log(num);
 
 
