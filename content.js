@@ -65,8 +65,26 @@ function eveDataCentral() {
             var buyPrice = getISK(selling, sellInt);
             var sellPrice = getISK(buying, buyInt);
             var pctDifference = ( (sellPrice - buyPrice) / sellPrice);
-            
+            var td = document.createElement('td');
+            var cellStr = function(){
+
+                var classColor = '';
+
+                if (pctDifference < .05) {
+                    td.style.color = 'grey';
+                }
+                else if (pctDifference >= .05 && pctDifference <= .07) {
+                    td.style.color = 'purple';
+                }
+                else {
+                    td.style.color = 'green';
+                }
+                return '<span class="' + classColor + '"><b>% Gain:</b> ' + pctDifference + '</span>';
+            }
+            td.innerHTML = cellStr();
+            rowNode.appendChild(td);
         }
+        td.className
     }
 }
 
