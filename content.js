@@ -53,8 +53,9 @@ function eveDataCentral() {
         //var buying =  $("tr td:has(b):contains('Buying')");
         var sellInt = 9;
         var buyInt = 8;
+        var limit = document.getElementsByName('limit')[0].value;
+        limit = parseInt(limit);
         var nodes = document.getElementsByTagName('tr');
-
 
         for (var i = 0; i < 50; i+=5) {
             var node = nodes[i+1];
