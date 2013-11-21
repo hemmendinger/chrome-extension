@@ -57,17 +57,18 @@ function eveDataCentral() {
         limit = parseInt(limit);
         var nodes = document.getElementsByTagName('tr');
 
-        for (var i = 0; i < 50; i+=5) {
-            var node = nodes[i+1];
-            console.log(node);
-            var selling = node.getElementsByTagName('td');
-            var buying = node.getElementsByTagName('td');
-            selling = selling.contains('Selling');
-            buying = buying.contains('Buying');
+        for (var i = 0; i < limit*5; i+=5) {
+            var rowNode = nodes[i+1];
+            var tdNodes = rowNode.getElementsByTagName('td');
+            var selling = tdNodes[1];
+            console.log(selling);
+            selling = selling.textContent;
+            var buying = tdNodes[2];
+
+            buying = buying.innerText;
             var buyPrice = getISK(selling, sellInt);
             var sellPrice = getISK(buying, buyInt);
-            console.log(num);
-
+            console.log(buyPrice);
 
         }
     }
