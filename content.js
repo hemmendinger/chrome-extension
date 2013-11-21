@@ -39,9 +39,9 @@ function eveDataCentral() {
 
     // uses jQuery
     if (document.domain == "eve-central.com") {
-        function getISK(node, sellOrBuyInt) {
+        function getISK(cellStr, sellOrBuyInt) {
             //var cellStr = $(cell).text();
-            var cellStr = node.innerText();
+            //var cellStr = node.textContent();
             cellStr = cellStr.substring(sellOrBuyInt);
             var stop = cellStr.indexOf(' ');
             cellStr = cellStr.substring(0, stop);
@@ -60,16 +60,12 @@ function eveDataCentral() {
         for (var i = 0; i < limit*5; i+=5) {
             var rowNode = nodes[i+1];
             var tdNodes = rowNode.getElementsByTagName('td');
-            var selling = tdNodes[1];
-            console.log(selling);
-            selling = selling.textContent;
-            var buying = tdNodes[2];
-
-            buying = buying.innerText;
+            var selling = tdNodes[1].textContent;
+            var buying = tdNodes[2].textContent;
             var buyPrice = getISK(selling, sellInt);
             var sellPrice = getISK(buying, buyInt);
-            console.log(buyPrice);
-
+            var pctDifference = ( (sellPrice - buyPrice) / sellPrice);
+            
         }
     }
 }
