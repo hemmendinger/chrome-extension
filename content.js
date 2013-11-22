@@ -83,6 +83,14 @@ function eveDataCentral() {
             }
             td.innerHTML = cellStr();
             rowNode.appendChild(td);
+
+            if (pctDifference < .03) {
+                nodes[i+0].style.visibility = 'hidden';
+                nodes[i+1].style.visibility = 'hidden';
+                nodes[i+2].style.visibility = 'hidden';
+                nodes[i+3].style.visibility = 'hidden';
+                nodes[i+4].style.visibility = 'hidden';
+            }
         }
         td.className
     }
